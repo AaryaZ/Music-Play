@@ -1,0 +1,9 @@
+{
+  "parameters":
+  {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/review",
+    "prod_uri": "mysql://root:@localhost/review"
+  }
+
+}

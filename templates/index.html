@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}} ">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>MUSIC PLAYER|INDEX</title>
+</head>
+
+<body>
+
+    <section id="hero">
+        <header class="main-nav">
+            <a href="#"><button class="logo"><i class="bi bi-music-note-list"></i></button></a>
+            <ul>
+                <li><a href="{{url_for('static',filename='index.html')}}">
+                        <h3>Home</h3>
+                    </a></li>
+                <!-- <li><a href="playlist.html"> -->
+                    <li><a href="playlist.html">
+                        <h3>Playlist</h3>
+                    </a></li>
+                    <li><a href="/review">
+                        <h3>Review</h3>
+                    </a></li>
+                    <li><a href="/contact">
+                        <h3>Contacts</h3>
+                    </a></li>
+
+
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textbox">
+                <h2 class="main-text">Trending</h2>
+                <h3 class="sub-text">Songs</h3>
+                <a href="/playlist.html" id="playlist">Playlist</a>
+            </div>
+
+            <div class="imgBox">
+                <img src=" {{url_for('static',filename='images/shersha.jpg')}} " alt="" class="singer">
+            </div>
+        </div>
+        <!--<ul class="text">
+            <li><h2 onclick="textSlider('Rock N Roll')">Rock N ROLL</h2></li>
+            <li><h2 onclick="textSlider('Rock N Roll')">old N ROLL</h2></li>
+            <li><h2 onclick="textSlider('Rock N Roll')">POP N ROLL</h2></li>
+        </ul>-->
+        <ul class="thumb">
+            <li><img src="/static/images/shersha.jpg" onclick="imgSlider('/static/images/shersha.jpg  ',1)"></li>
+            <li><img src="/static/images/zayn2.jpg" alt="" onclick="imgSlider('/static/images/zayn2.jpg',2)"></li>
+            <li><img name='image' id='3' src="/static/images/srk.jpg" alt="" onclick="imgSlider('/static/images/srk.jpg',3)">
+            </li>
+            <li><img name='image' id='4' src="/static/images/blackwhite.jpg" alt=""
+                    onclick="imgSlider('/static/images/blackwhite.jpg',4)"></li>
+        </ul>
+
+    </section>
+    <script>
+        function imgSlider(imgSrc, id) {
+ document.querySelector('.singer').src = imgSrc;
+ changetext(id);
+ }
+ function changetext(id) {
+
+ if (id == 1) {
+ document.querySelector('.main-text').innerHTML = "Trending";
+
+ }
+ else if (id == 2) {
+ document.querySelector('.main-text').innerHTML = "Rock-N-Roll";
+
+ }
+ else if (id == 3) {
+ document.querySelector('.main-text').innerHTML = "Bollywood";
+
+ }
+
+ else if (id == 4) {
+ document.querySelector('.main-text').innerHTML = "Childhood";
+
+ }
+ window.localStorage.setItem('playlistId', id);
+ }
+        
+    </script>
+</body>
+
+</html>
